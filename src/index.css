@@ -1,0 +1,71 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.5%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 14.5%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.5%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 14.5%;
+    --input: 0 0% 14.5%;
+    --ring: 0 0% 83.9%;
+    
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg;
+  }
+  
+  .card-glass {
+    @apply bg-gradient-to-br from-secondary/80 to-card/70 backdrop-blur-md border border-white/5 shadow-xl;
+  }
+
+  .animate-spin-slow {
+    animation: spin 1.5s ease-in-out;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+}
